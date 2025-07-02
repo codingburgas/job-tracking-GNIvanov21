@@ -1,0 +1,21 @@
+{
+  "Users": [
+    {
+      "Id": 1,
+      "FirstName": "az",
+      "MiddleName": null,
+      "LastName": "az",
+      "Username": "az",
+      "PasswordHash": null,
+      "Role": 0
+    },
+    {
+      "Id": 2,
+      "FirstName": "qw",
+      "MiddleName": null,
+      "LastName": "qw",
+      "Username": "qw",
+      "PasswordHash": "94911c5176be2e43a09fd03a55732fef0f56a61fcf56d6486d7b21dfae5cdb01",
+      "Role": 1
+    },
+    

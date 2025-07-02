@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of fixed height for scrollable content */
+    margin: 0;
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px; /* Increased max-width for jobs/admin page content */
+    box-sizing: border-box;
+}
+
+h2, h3, h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    margin-top: 2rem; /* Add some space above section headings */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem; /* Slightly increased padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem; /* Ensure consistent font size */
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Add a little space above buttons */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #5a9ed8;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1em; /* Ensures space even when empty */
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header for jobs.html */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px; /* Space between header items */
+}
+
+.header h2 {
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow welcome message to take available space */
+    text-align: left; /* Align welcome message to the left */
+}
+
+.header button {
+    width: auto; /* Buttons should not take full width in header */
+    padding: 0.6rem 1rem; /* Adjust padding for header buttons */
+    margin-top: 0;
+}
+
+/* Job Cards */
+.job-card {
+    border: 1px solid #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for cards */
+}
+
+.job-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    text-align: left; /* Align job title to the left */
+}
+
+.job-card p {
+    text-align: left; /* Align job details to the left */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-card small {
+    display: block; /* Ensure small text is on its own line */
+    text-align: left;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.job-card .apply-button,
+.job-card .delete-job-button {
+    width: auto; /* Make buttons fit content */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    float: right; /* Align to the right */
+}
+
+.job-card .delete-job-button {
+    background-color: #dc3545; /* Red for delete */
+}
+
+.job-card .delete-job-button:hover {
+    background-color: #c82333;
+}
+
+/* Applied Job Cards specific styles */
+.applied-job-card {
+    background-color: #e6f7ff; /* Lighter blue background for applied jobs */
+    border-color: #b3e0ff;
+}
+
+/* Application Mailbox for Admin */
+.application-card {
+    background-color: #fff3cd; /* Light yellow background for applications */
+    border-color: #ffeeba;
+    position: relative; /* For status badge positioning */
+}
+
+.application-card h4 {
+    color: #6d4200; /* Darker color for application titles */
+}
+
+.application-status-pending {
+    color: #ffc107; /* Yellow */
+    font-weight: bold;
+}
+
+.application-status-approved {
+    color: #28a745; /* Green */
+    font-weight: bold;
+}
+
+.application-status-rejected {
+    color: #dc3545; /* Red */
+    font-weight: bold;
+}
+
+.status-button {
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    display: inline-block; /* Allow buttons to be on the same line */
+}
+
+.approve-button {
+    background-color: #28a745;
+}
+
+.approve-button:hover {
+    background-color: #218838;
+}
+
+.reject-button {
+    background-color: #dc3545;
+}
+
+.reject-button:hover {
+    background-color: #c82333;
+}
+
+/* Clearfix for floated buttons */
+.job-card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .header h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .header button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

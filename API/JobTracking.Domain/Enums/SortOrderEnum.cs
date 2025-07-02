@@ -2,7 +2,7 @@
 {
     public enum SortOrderEnum
     {
-        ASC,
-        DESC
+        Asc,
+        Desc
     }
 }

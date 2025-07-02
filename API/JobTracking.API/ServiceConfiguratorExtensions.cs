@@ -1,55 +1,34 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using JobTracking.DataAccess.Data;
+using Microsoft.EntityFrameworkCore;
+// using Microsoft.AspNetCore.Identity;
+// using Microsoft.AspNetCore.Authentication.JwtBearer; 
+// using Microsoft.IdentityModel.Tokens; 
+// using System.Text; 
+// using JobTracking.Domain.Constants; 
 
 namespace JobTracking.API
 {
     public static class ServiceConfiguratorExtensions
     {
-        public static void AddContext(this WebApplicationBuilder builder)
+        public static void ConfigureDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            builder.Services.AddScoped<ApplicationDbContext>();
+            //services.AddDbContext<ApplicationDbContext>(options =>
+                //options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
- 
+        
         public static void AddIdentity(this WebApplicationBuilder builder)
         {
-            //builder.Services.AddIdentityCore<IdentityUser>()
-            //    .AddRoles<IdentityRole>()
-            //    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("HrManagement")
-            //    .AddEntityFrameworkStores<HrManagementContext>()
-            //    .AddDefaultTokenProviders();
- 
-            //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-            //{
-            //    options.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuer = true,
-            //        ValidateAudience = true,
-            //        ValidateLifetime = true,
-            //        ValidateIssuerSigningKey = true,
-            //        ValidIssuer = builder.Configuration[Jwt.Issuer],
-            //        ValidAudience = builder.Configuration[Jwt.Audience],
-            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration[Jwt.Key]))
-            //    };
-            //});
+            // Identity
         }
  
         public static void AddServices(this WebApplicationBuilder builder)
         {
-            // ...
+            //  Application
         }
  
         public static void AddCors(this WebApplicationBuilder builder)
         {
-            //builder.Services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        config =>
-            //        {
-            //            config.WithOrigins("http://localhost:4200", "https://localhost:7184")
-            //                .AllowAnyHeader()
-            //                .WithMethods(HttpMethod.Get.Method, HttpMethod.Post.Method, HttpMethod.Put.Method,
-            //                    HttpMethod.Delete.Method);
-            //        });
-            //});
+            // CORS връзка с Angular
         }
     }
 }

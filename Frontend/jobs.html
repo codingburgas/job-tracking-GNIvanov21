@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2 id="welcome-message">Welcome!</h2>
+        <button id="show-applied-jobs-button">Show My Applications</button>
+        <button id="logout-button">Logout</button>
+    </div>
+    <hr>
+
+    <div id="applied-jobs-container" style="display: none;">
+        <h3>My Applications</h3>
+        <p id="applied-jobs-error" class="error-message"></p>
+        <div id="applied-jobs-list">
+        </div>
+        <hr>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <h3>Applications Mailbox (Admin View)</h3>
+        <div id="applications-mailbox">
+        </div>
+        <hr>
+        <h4>Create New Job</h4>
+        <form id="create-job-form">
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" required>
+            </div>
+            <div class="form-group">
+                <label for="job-company-id">Company ID</label>
+                <input type="number" id="job-company-id" required>
+            </div>
+            <div class="form-group">
+                <label for="job-description">Description</label>
+                <textarea id="job-description" rows="4" required></textarea>
+            </div>
+            <button type="submit">Create Job</button>
+            <p id="job-error" class="error-message"></p>
+        </form>
+        <hr>
+        <h3>My Posted Jobs (Admin View)</h3>
+        <div id="admin-jobs-list-container">
+        </div>
+        <hr>
+    </div>
+
+    <h3>Available Jobs</h3>
+    <div id="jobs-list-container">
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
